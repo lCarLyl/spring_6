@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div>
+    <h1>List cars</h1>
+    <table>
+        <tr><th>Count </th><th>Name</th><th>Owner</th><th>Age</th></tr>
+        <th:block th:each="car,mvc : ${car_list}">
+            <tr><td><p th:text="${mvc.count}" /></td>
+                <td><p th:text="${car.getName()}" /></td>
+                <td><p th:text="${car.getOwner()}" /></td>
+                <td><p th:text="${car.getAge()}" /></td></tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>
